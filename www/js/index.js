@@ -52,7 +52,7 @@ var soyad=new Array();
 var nick=new Array();
  
 $.ajax({
-  url:'http://yayinevi.sabanciuniv.edu/yayinevi.xml',
+  url:'veri.xml',
   type:'POST',
   dataType:'xml',
   success:function(gelen){

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kisiler>
+  <kisi>
+    <ad>mehmet</ad>
+    <soyad>demir</soyad>
+    <nick>demit</nick>
+  </kisi>
+
+  <kisi>
+    <ad>ahmet</ad>
+    <soyad>yazar</soyad>
+    <nick>ahzar</nick>
+  </kisi>
+
+  <kisi>
+    <ad>nuri</ad>
+    <soyad>mahsun</soyad>
+    <nick>mahsuni</nick>
+  </kisi>
+</kisiler>
