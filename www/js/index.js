@@ -52,9 +52,9 @@ var soyad=new Array();
 var nick=new Array();
  
 $.ajax({
-  url:'veri.xml',
+  url:'content.json',
   type:'POST',
-  dataType:'xml',
+  dataType:'json',
   success:function(gelen){
     var i=0;
     //xml sayfasından bütün kişileri al
@@ -66,8 +66,25 @@ $.ajax({
       i++;
     });
     //bir kişinin değerlerini ekrana yaz
-    $("#adi").html('Ad: '+ad[1]);
-    $("#soyadi").html('Soyad: '+soyad[1]);
-    $("#nicki").html('Nick: '+nick[1]);
+    $("#adi").val('Ad: '+ad[1]);
+    $("#soyadi").val('Soyad: '+soyad[1]);
+    $("#nicki").val('Nick: '+nick[1]);
   }
 });
+
+/*
+var person = {
+  firstName: "Christophe",
+  lastName: "Coenraets",
+  blogURL: "http://coenraets.org"
+};
+var template = "<h1>{
+firstName}} {
+  lastName}}</h1>Blog: {
+    blogURL}}";
+    var html = Mustache.to_html(template, person);
+    $('#div').val(html);"
+    }
+}
+}"
+*/
