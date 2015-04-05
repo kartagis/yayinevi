@@ -36,9 +36,12 @@ body {
   border-bottom:1px solid #000;
 }
 .search {
+  float:right;
   border-radius:3px;
   background:url(../img/search.png) no-repeat;
   padding-left:17px;
+  height:15px;
+  font-size:14px;
 }
 label {
   display:inline-block;
