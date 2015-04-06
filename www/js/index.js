@@ -51,6 +51,7 @@ var ad=new Array();
 var soyad=new Array();
 var nick=new Array();
  
+/*
 $.ajax({
   url:'content.json',
   type:'POST',
@@ -71,20 +72,12 @@ $.ajax({
     $("#nicki").val('Nick: '+nick[1]);
   }
 });
-
-/*
-var person = {
-  firstName: "Christophe",
-  lastName: "Coenraets",
-  blogURL: "http://coenraets.org"
-};
-var template = "<h1>{
-firstName}} {
-  lastName}}</h1>Blog: {
-    blogURL}}";
-    var html = Mustache.to_html(template, person);
-    $('#div').val(html);"
-    }
-}
-}"
 */
+var person = {
+    firstName: "Christophe",
+    lastName: "Coenraets",
+    blogURL: "http://coenraets.org"
+};
+var template = "<h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}";
+var html = Mustache.render(template, person);
+$('#div').html(html);

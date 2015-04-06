@@ -29,8 +29,7 @@ body {
 }
 
 .fixed {
-  background:url(../img/logo.png) no-repeat;
-  /*position:fixed;*/
+  position:fixed;
   height:30px;
   width:100%;
   border-bottom:1px solid #000;
@@ -39,8 +38,8 @@ body {
   float:right;
   border-radius:3px;
   background:url(../img/search.png) no-repeat;
-  padding-left:17px;
-  height:15px;
+  padding:10px 17px;
+  line-height:15px;
   font-size:14px;
 }
 label {
