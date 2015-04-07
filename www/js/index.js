@@ -74,10 +74,11 @@ $.ajax({
 });
 */
 var person = {
-    firstName: "Christophe",
-    lastName: "Coenraets",
-    blogURL: "http://coenraets.org"
+    firstName: "Tolga",
+    lastName: "Özses",
+    websiteURL: "http://webcinizim.com"
 };
-var template = "<h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}";
+var template = "<h1>{{firstName}} {{lastName}}</h1>Website: {{websiteURL}}";
 var html = Mustache.render(template, person);
+console.log(html);
 $('#div').html(html);
