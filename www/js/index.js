@@ -72,7 +72,6 @@ $.ajax({
     $("#nicki").val('Nick: '+nick[1]);
   }
 });
-*/
 var person = {
     firstName: "Tolga",
     lastName: "Özses",
@@ -82,3 +81,16 @@ var template = "<h1>{{firstName}} {{lastName}}</h1>Website: {{websiteURL}}";
 var html = Mustache.render(template, person);
 console.log(html);
 $('#div').html(html);
+*/
+if ($(".search").val()) {
+  $.ajax({
+    url: "http://yayinevi.sabanciuniv.edu/",
+    type: 'GET',
+    dataType: 'json', // added data type
+//data: {"q": "search/node/"+$(".search").val()},   // querystring params passed
+    data: {"q": "search/node/felsefi"},   // querystring params passed
+    success: function(data) {
+      alert(data);
+    }
+  });
+}
