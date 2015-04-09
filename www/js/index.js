@@ -47,50 +47,14 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-var ad=new Array();
-var soyad=new Array();
-var nick=new Array();
- 
-/*
-$.ajax({
-  url:'content.json',
-  type:'POST',
-  dataType:'json',
-  success:function(gelen){
-    var i=0;
-    //xml sayfasından bütün kişileri al
-    $(gelen).find('kisi').each(function(){
-      //kişilerin değerlerini diziye aktar
-      ad[i]=$(this).find('ad').text();
-      soyad[i]=$(this).find('soyad').text();
-      nick[i]=$(this).find('nick').text();
-      i++;
-    });
-    //bir kişinin değerlerini ekrana yaz
-    $("#adi").val('Ad: '+ad[1]);
-    $("#soyadi").val('Soyad: '+soyad[1]);
-    $("#nicki").val('Nick: '+nick[1]);
-  }
-});
-var person = {
-    firstName: "Tolga",
-    lastName: "Özses",
-    websiteURL: "http://webcinizim.com"
-};
-var template = "<h1>{{firstName}} {{lastName}}</h1>Website: {{websiteURL}}";
-var html = Mustache.render(template, person);
-console.log(html);
-$('#div').html(html);
-*/
-if ($(".search").val()) {
+$("#search-btn").on("click", function() {
   $.ajax({
     url: "http://yayinevi.sabanciuniv.edu/",
-    type: 'GET',
-    dataType: 'json', // added data type
-//data: {"q": "search/node/"+$(".search").val()},   // querystring params passed
-    data: {"q": "search/node/felsefi"},   // querystring params passed
-    success: function(data) {
-      alert(data);
-    }
+  type: 'GET',
+  dataType: 'json', // added data type
+  data: {"q": "search/node/"+$(".search").val().replace(/%2F/g, '/')},   // querystring params passed
+  success: function(data) {
+    alert(data);
+  }
   });
-}
+})
