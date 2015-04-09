@@ -34,8 +34,13 @@ body {
   width:100%;
   border-bottom:1px solid #000;
 }
-.search {
-  float:right;
+#search-btn {
+  float-right;
+  height:30px;
+  border-radius:3px;
+}
+#search-txt {
+  float-right;
   border-radius:3px;
   background:url(../img/search.png) no-repeat;
   padding:10px 17px;
