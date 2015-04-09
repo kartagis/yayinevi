@@ -48,7 +48,7 @@ var app = {
   }
 };
 document.addEventListener('deviceready', function () {
-  if (navigator.notification) { // Override default HTML alert with native dialog
+  if (navigator.notification && navigator.notification.alert) { // Override default HTML alert with native dialog
     window.alert = function (message) {
       navigator.notification.alert(
         message,    // message
@@ -61,7 +61,7 @@ document.addEventListener('deviceready', function () {
 }, false);
 
 $("#search-btn").on("click", function() {
-  if ("#search-txt").val() {
+  //if ("#search-txt").val() {
     $.ajax({
       url: "http://yayinevi.sabanciuniv.edu/",
       type: 'GET',
@@ -71,5 +71,5 @@ $("#search-btn").on("click", function() {
         alert(JSON.stringify(data));
       }
     });
-  }
+  //}
 })
