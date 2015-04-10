@@ -35,17 +35,18 @@ body {
   border-bottom:1px solid #000;
 }
 #search-btn {
-  float-right;
   height:30px;
   border-radius:3px;
 }
 #search-txt {
-  float-right;
   border-radius:3px;
   background:url(../img/search.png) no-repeat;
   padding:10px 17px;
   line-height:17px;
   font-size:16px;
+}
+.right {
+  float:right;
 }
 label {
   display:inline-block;
@@ -53,11 +54,8 @@ label {
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-  .app {
-    background-position:left center;
-    padding:75px 0px 75px 170px;	/* padding-top + padding-bottom + text area = image height */
-    margin:-90px 0px 0px -198px;	/* offset vertical: half of image height */
-    /* offset horizontal: half of image width and text area width */
+  #search-txt {
+    width:50px;
   }
 }
 
