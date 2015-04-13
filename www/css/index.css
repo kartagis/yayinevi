@@ -40,7 +40,7 @@ body {
 }
 #search-txt {
   border-radius:3px;
-  background:url(../img/search.png) no-repeat;
+  background:url(../img/search.png) no-repeat left;
   padding:10px 17px;
   line-height:17px;
   font-size:16px;
@@ -48,16 +48,12 @@ body {
 .right {
   float:right;
 }
+
+/*
 label {
   display:inline-block;
 }
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-  #search-txt {
-    width:50px;
-  }
-}
+*/
 
 h1 {
   font-size:24px;
@@ -93,3 +89,11 @@ h1 {
   animation:fade 3000ms infinite;
   -webkit-animation:fade 3000ms infinite;
 }
+
+@media screen and (max-width:1000px) {
+  #search-txt {
+    display:inline-block;
+    width:50px;
+  }
+}
+
