@@ -39,7 +39,7 @@ body {
   border-radius:3px;
 }
 #search-txt {
-  border-radius:3px;
+  border-radius:10px;
   background:url(../img/search.png) no-repeat left;
   padding:10px 17px;
   line-height:17px;
@@ -90,10 +90,9 @@ h1 {
   -webkit-animation:fade 3000ms infinite;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:500px) {
   #search-txt {
     display:inline-block;
-    width:50px;
+    width:100px;
   }
 }
-

@@ -60,16 +60,19 @@ document.addEventListener('deviceready', function () {
   }
 }, false);
 
-$("#search-btn").on("click", function() {
-  //if ("#search-txt").val() {
+$("#search-txt").on("keypress", function(e) {
+  if (e.keyCode === 13) {
+  alert(e.keyCode === 13);
+    /*
     $.ajax({
       url: "http://yayinevi.sabanciuniv.edu/",
       type: 'GET',
       dataType: 'json',
       data: {"q": 'search/node/'+$("#search-txt").val()},
       complete: function(data) {
-        alert(JSON.stringify(data));
+        alert(JSON.parse(data));
       }
     });
-  //}
+  */
+  }
 })
