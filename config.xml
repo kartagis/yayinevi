@@ -10,6 +10,4 @@
   </author>
   <content src="index.html" />
   <access origin="http://yayinevi.sabanciuniv.edu/" />
-<preference name="permissions" value="none"/>
-<feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
