@@ -10,4 +10,8 @@
   </author>
   <content src="index.html" />
   <access origin="http://yayinevi.sabanciuniv.edu/" />
+  <feature name="debug-server" required="true">
+    <param name="domain" value="http://localhost:9000"/>
+    <param name="key" value="[ a unique id for your app ]"/>
+  </feature>
 </widget>
