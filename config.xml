@@ -9,5 +9,5 @@
     Muzaffer Tolga Özses
   </author>
   <content src="index.html" />
-  <access origin="*" />
+  <access origin="http://yayinevi.sabanciuniv.edu" />
 </widget>

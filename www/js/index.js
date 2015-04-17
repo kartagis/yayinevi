@@ -16,15 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-document.addEventListener('deviceready', function() {
+//document.addEventListener('deviceready', function() {
   $.ajax({
     url: 'http://yayinevi.sabanciuniv.edu/content.json',
   dataType: 'json',
   success: function(data){
-    alert(JSON.stringify(data));
-  }
+    for (var i=0;i<data.nodes.length;i++) {
+      image[i]=data.nodes[i].node.field_resim.src[i];
+      alert(image);
+    };
+  },
   error: function(data) {
     alert('Bir hata oluştu');
   }
   })
-});
+//});
