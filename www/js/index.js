@@ -16,12 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-$(document).ready(function() {
+document.addEventListener('deviceready', function() {
   $.ajax({
     url: 'http://yayinevi.sabanciuniv.edu/content.json',
   dataType: 'json',
-  complete: function(data){
-    alert('Tamamlandı');
+  success: function(data){
+    alert(JSON.stringify(data));
+  }
+  error: function(data) {
+    alert('Bir hata oluştu');
   }
   })
 });
