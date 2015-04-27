@@ -1,7 +1,4 @@
-//document.addEventListener('deviceready', createXHR, false);
-document.addEventListener('deviceready', function() {
-  alert('Hello');
-});
+document.addEventListener('deviceready', createXHR, false);
 document.addEventListener('resume', createXHR, false);
 
 function createXHR() {
