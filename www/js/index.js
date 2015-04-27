@@ -17,14 +17,22 @@ function createXHR() {
         var price = d.createElement('div');
         price.className = 'price';
         price.innerHTML = value.node.field_fiyat_1;
-        var pid = d.createElement('div');
-        pid.innerHTML = value.node.field_pid;
+        var buy = d.createElement('div');
+        buy.innerHTML = value.node.field_satin_al;
+        var btn = d.createElement('input');
+        btn.type = 'button';
+        btn.value = 'Buy';
         var hr = d.createElement('hr');
+        btn.className = 'btn success';
         d.body.appendChild(title);
         d.body.appendChild(img);
         d.body.appendChild(price);
-        d.body.appendChild(pid);
+        d.body.appendChild(btn);
         d.body.appendChild(hr);
+        $('.success').on('click', function() {
+          $(this).blur();
+          window.location = 'http://yayinevi.sabanciuniv.edu/index.php?do=catalog/payment&amp;lang=tr&amp;id='+buyinnerHTML+'&amp;externalId=";"';
+        });
       });
     }
   });
