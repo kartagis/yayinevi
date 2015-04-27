@@ -1,6 +1,5 @@
-//document.addEventListener('deviceready', createXHR, false);
-document.addEventListener('resume', createXHR, false);
 document.addEventListener('DOMContentLoaded', createXHR, false);
+document.addEventListener('resume', createXHR, false);
 
 function createXHR() {
   $.ajax({
