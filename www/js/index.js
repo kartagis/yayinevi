@@ -14,14 +14,14 @@ function createXHR() {
       }
       $.each(data.nodes, function (key, value) {
         var d = document,
-      a = createElement('a', 'img'),
-      img = createElement('img', 'img'),
-      title = createElement('div', 'title'),
-      price = createElement('div', 'price'),
-      buy = createElement('div'),
-      btn = createElement('input', 'btn success'),
-      row = createElement('div', 'row'),
-      clear = createElement('div', 'clear');
+            a = createElement('a', 'img'),
+            img = createElement('img', 'img'),
+            title = createElement('div', 'title'),
+            price = createElement('div', 'price'),
+            buy = createElement('div'),
+            btn = createElement('input', 'btn success'),
+            row = createElement('div', 'row'),
+            clear = createElement('div', 'clear');
       a.dataset.title = value.node.title;
       a.setAttribute('href', value.node.field_resim.src);
       a.dataset.lightbox = 'lightbox';

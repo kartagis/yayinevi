@@ -10,4 +10,5 @@
   </author>
   <content src="index.html" />
   <access origin="http://yayinevi.sabanciuniv.edu" />
+  <access origin="https://supay.sabanciuniv.edu" />
 </widget>
