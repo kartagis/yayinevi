@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', createXHR, false);
-//document.addEventListener('resume', createXHR, false);
+//document.addEventListener('DOMContentLoaded', createXHR, false);
+document.addEventListener('deviceready', createXHR, false);
+document.addEventListener('resume', createXHR, false);
 
 function createXHR() {
   var buy;
@@ -42,7 +43,8 @@ function createXHR() {
   });
 }
 $(document).on('click', '.success', function () {
-  var supay=window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy.innerHTML, '_blank', 'location=yes');
+  //window.open = cordova.InAppBrowser.open;
+  var supay = cordova.InAppBrowser.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy.innerHTML, '_blank', 'location=yes');
   supay.addEventListener('loadstart', function() {
     alert('Start');
   });
