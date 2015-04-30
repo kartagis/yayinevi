@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.sabanci.yayinevi" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <icon src="www/img/logo-128.png"/>
+  <icon src="www/img/yayinevi.png"/>
   <name>Yayınevi</name>
   <description>
     Yayınevinin ürünlerini göstermek için uygulama
