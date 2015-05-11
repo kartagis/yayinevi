@@ -31,12 +31,13 @@ function createXHR() {
             buy = value.node.field_satin_al;
             btn.type = 'button';
             btn.value = price + ' TL';
+            btn.dataset.buy = buy;
             row.appendChild(title);
             row.appendChild(btn);
             row.appendChild(clear);
             d.body.appendChild(row);
             $(document).live('click', '.success', function() {
-                console.log("window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy, '_blank', 'location=yes'"));
+                window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy, '_blank', 'location=yes');
             });
         });
     }

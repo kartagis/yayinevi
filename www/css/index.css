@@ -62,3 +62,6 @@ img {
 .clear {
   clear: both;
 }
+.fixed {
+  position:static;
+}
