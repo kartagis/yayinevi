@@ -36,10 +36,11 @@ function createXHR() {
             row.appendChild(btn);
             row.appendChild(clear);
             d.body.appendChild(row);
-            $(document).live('click', '.success', function() {
-                window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy, '_blank', 'location=yes');
             });
-        });
-    }
+	$(document).on('click', '.success', function (ev) {
+			var buy = $(ev.target).attr("data-buy");
+			window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
+			});
+      }
   });
 }
