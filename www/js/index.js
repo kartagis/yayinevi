@@ -40,7 +40,8 @@ function createXHR() {
             });
             $(document).on('click', '.success', function (ev) {
                 var buy = $(ev.target).attr("data-buy");
-                inappbrowser.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
+                if (window.inappbrowser) window.open = inappbrowser.open;
+                window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
             });
       }
   });
