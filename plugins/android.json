@@ -10,7 +10,7 @@
                     "/*": [
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 2
+                            "count": 1
                         }
                     ]
                 }
@@ -23,9 +23,6 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.inappbrowser": {
-            "PACKAGE_NAME": "com.sabanci.yayinevi"
-        },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.sabanci.yayinevi"
         }
