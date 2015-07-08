@@ -1,6 +1,18 @@
 document.addEventListener('deviceready', createXHR, false);
 document.addEventListener('resume', createXHR, false);
 
+function titleCase(text) {
+    var oldText = $("#text").val();
+    var split = oldText.split(' ');
+    //iterate through each of the "words" and capitalize them
+    for (var i = 0, len = split.length; i < len; i++) {
+        split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1);
+    }
+    oldText = split.join(' ');
+    //your result
+    $(".title").val(oldText); //Sample Text Example
+}
+
 function createXHR() {
   var buy;
   $.ajax({
@@ -27,7 +39,8 @@ function createXHR() {
             d.body.appendChild(a);
             a.appendChild(img);
             img.src = value.node.field_resim.src;
-            title.innerHTML = value.node.title;
+            title=value.node.title.toTitleCase();
+            title.innerHTML = title;
             price = value.node.field_fiyat_1;
             buy = value.node.field_satin_al;
             btn.type = 'button';
