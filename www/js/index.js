@@ -1,46 +1,23 @@
 document.addEventListener('deviceready', createXHR, false);
 document.addEventListener('resume', createXHR, false);
 
-function titleCase(text) {
-    var oldText = $("#text").val();
-    var split = oldText.split(' ');
-    //iterate through each of the "words" and capitalize them
-    for (var i = 0, len = split.length; i < len; i++) {
-        split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1);
-    }
-    oldText = split.join(' ');
-    //your result
-    $(".title").val(oldText); //Sample Text Example
-}
-
 function createXHR() {
   var buy;
   $.ajax({
       url: 'http://yayinevi.sabanciuniv.edu/content.json',
       dataType: 'json',
       success: function(data) {
-        function createElement(eleType, className) {
-          var ele = document.createElement(eleType);
-          ele.className = className;
-          return ele;
-        }
         $.each(data.nodes, function(key, value) {
             var d = document,
-                a = createElement('a', 'img'),
-                img = createElement('img', 'img'),
-                title = createElement('div', 'title'),
-                price = createElement('div', 'price'),
-                btn = createElement('input', 'btn success'),
-                row = createElement('div', 'row'),
-                clear = createElement('div', 'clear');
-            a.dataset.title = value.node.title;
-            a.setAttribute('href', value.node.field_resim.src);
-            a.dataset.lightbox = 'lightbox';
-            d.body.appendChild(a);
-            a.appendChild(img);
-            img.src = value.node.field_resim.src;
-            title=value.node.title.toTitleCase();
-            title.innerHTML = title;
+                a = $('<a>',{'class':'a','data-lightbox':'lightbox','data-title':value.node.title,'href':value.node.field_resim.src}),
+                img = $('<img>',{'class':'img','src':value.node.field_resim.src}),
+                title = $('<div>',{'class':'title','innerHTML':value.node.title}),
+                price = $('<div>',{'class':'price'}),
+                btn = $('<input>',{'class':'btn success','type':'button','data-buy':value.node.field_satin_al,'value':price+' TL'}),
+                row = $('<div>', 'row'),
+                clear = $('<div>', 'clear');
+            $('body').append(a);
+            a.append(img);
             price = value.node.field_fiyat_1;
             buy = value.node.field_satin_al;
             btn.type = 'button';
