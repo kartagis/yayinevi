@@ -1,10 +1,6 @@
-//document.addEventListener('deviceready', createXHR, false);
-//document.addEventListener('resume', createXHR, false);
-document.addEventListener('deviceready',function(){
-    alert(windows.plugins);
-});
+document.addEventListener('deviceready', createXHR, false);
+document.addEventListener('resume', createXHR, false);
 
-/*
 function createXHR() {
     var buy;
     $.ajax({
@@ -54,11 +50,14 @@ function createXHR() {
                 d.body.appendChild(row);
             });
             $(document).on('click', '.success', function (ev) {
-                    var buy = $(ev.target).attr("data-buy");
-                    window.plugins.toast.showShortTop('Redirecting you to payment page', function(a){console.log('toast success'+a)}, function(b){alert('toast failure'+b)});
-                    window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
-                    });
+                var buy = $(ev.target).attr("data-buy");
+                $("#toast").fadeIn(1500, function () {
+                    setTimeout(function () {
+                        $("#toast").fadeOut(1500);
+                    }, 2000)
+                });
+                window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
+            });
         }
     });
 }
-*/

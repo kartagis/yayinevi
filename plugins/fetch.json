@@ -23,11 +23,5 @@
             "url": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
             "subdir": "."
         }
-    },
-    "nl.x-services.plugins.toast": {
-        "source": {
-            "type": "registry",
-            "id": "nl.x-services.plugins.toast"
-        }
     }
 }

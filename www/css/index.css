@@ -50,6 +50,7 @@ body {
 img {
   clear: left;
   float: left;
+  border-radius:5px;
 }
 .title {
   float:right;
@@ -64,4 +65,17 @@ img {
 }
 .fixed {
   position:static;
+}
+#toast {
+  background:#000;
+  color:#fff;
+  border-radius:10px;
+  text-align:center;
+  font:10px Arial;
+  width:100px;
+  margin:50% auto auto auto;
+  padding:2px;
+  opacity:0.7;
+  display:none;
+}
 }
