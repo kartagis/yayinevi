@@ -7,57 +7,64 @@ function createXHR() {
         url: 'http://yayinevi.sabanciuniv.edu/content.json',
         dataType: 'json',
         success: function (data) {
-            function titleCase(text) {
-                var words = text.split(' ');
-                var results = [];
-                for (var i = 0; i < words.length; i++) {
-                    var letter = words[i].charAt(0).toUpperCase();
-                    results.push(letter + words[i].slice(1));
-                }
-                return results.join(' ');
-            };
-
-            function createElement(eleType, className) {
-                var ele = document.createElement(eleType);
-                ele.className = className;
-                return ele;
-            }
             $.each(data.nodes, function (key, value) {
-                var d = document,
-                a = createElement('a', 'a'),
-                img = createElement('img', 'img'),
-                p = createElement('p', 'title'),
-                cnt=createElement('div', 'container'),
-                price = createElement('div', 'price'),
-                btn = createElement('input', 'btn success'),
-                row = createElement('div', 'row'),
-                clear = createElement('div', 'clear'),
-                title=titleCase(value.node.title);
-                $(".a").attr("data-title", value.node.title);
-                $(".a").attr('href', value.node.field_resim.src);
-                $(".a").attr("data-lightbox", "lightbox");
-                d.body.appendChild(a);
-                a.appendChild(img);
-                $(img).attr("src", value.node.field_resim.src);
-                p.innerHTML = title;
-                price = value.node.field_fiyat_1;
-                $(btn).attr("data-buy", value.node.field_satin_al);
-                btn.type = 'button';
-                btn.value = price + ' TL';
-                row.appendChild(p);
-                row.appendChild(btn);
-                row.appendChild(clear);
-                d.body.appendChild(row);
-            });
-            $(document).on('click', '.success', function (ev) {
-                var buy = $(ev.target).attr("data-buy");
-                $("#toast").fadeIn(1500, function () {
-                    setTimeout(function () {
-                        $("#toast").fadeOut(1500);
-                    }, 2000)
-                });
-                window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
+                var b = $('body'),
+                main = $('<div>', {
+                    'id': 'main'
+                }),
+                row = $('<div>', {
+                    'class': 'row'
+                }),
+                a = $('<a>', {
+                    'class': 'a',
+                    'data-lightbox': 'lightbox',
+                    'data-title': value.node.title,
+                    'href': value.node.field_resim.src
+                }),
+                img = $('<img>', {
+                    'class': 'img',
+                    'src': value.node.field_resim.src
+                }),
+                cnt = $('<div>', {
+                    'class': 'container'
+                }),
+                ttl = $('<div>', {
+                    'class': 'title'
+                }),
+                p = $('<p>', {
+                    'class': 'p'
+                }),
+                btn = $('<button>', {
+                    'class': 'btn success',
+                    'data-buy': value.node.field_satin_al
+                }),
+                price = $('<div>', {
+                    'class': 'price'
+                }),
+                hr = $('<hr>');
+                title = value.node.title.toTitleCase();
+                p[0].textContent = value.node.title.toTitleCase();
+                btn[0].innerHTML = 'Buy';
+                price[0].innerHTML = value.node.field_fiyat_1 + ' TL';
+                ttl[0].innerHTML = value.node.title;
+                b.append(row);
+                row.append(a);
+                row.append(img);
+                row.append(cnt);
+                cnt.append(ttl);
+                cnt.append(price);
+                cnt.append(btn);
+                row.append(hr);
             });
         }
+    });
+    $(document).on('click', '.success', function (ev) {
+        var buy = $(ev.target).attr("data-buy");
+        $("#toast").fadeIn(1500, function () {
+            setTimeout(function () {
+                $("#toast").fadeOut(1500);
+            }, 2000)
+        });
+        window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
     });
 }
