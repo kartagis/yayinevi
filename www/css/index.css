@@ -54,16 +54,3 @@ img {
 .title, .price {
   text-align:center;
 }
-
-#toast {
-  background:#f47514;
-  color:#000;
-  border-radius:10px;
-  text-align:center;
-  font:10px Arial;
-  width:100px;
-  margin:50% auto auto auto;
-  padding:2px;
-  opacity:0.7;
-  display:none;
-}
