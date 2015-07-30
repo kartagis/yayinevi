@@ -42,11 +42,10 @@ function createXHR() {
                     'class': 'price'
                 }),
                 hr = $('<hr>');
-                title = value.node.title.toTitleCase();
-                p[0].textContent = value.node.title.toTitleCase();
+                p[0].textContent = value.node.title.titleize();
                 btn[0].innerHTML = 'Buy';
                 price[0].innerHTML = value.node.field_fiyat_1 + ' TL';
-                ttl[0].innerHTML = value.node.title;
+                ttl[0].innerHTML = value.node.title.titleize();
                 b.append(row);
                 row.append(a);
                 row.append(img);
@@ -60,11 +59,10 @@ function createXHR() {
     });
     $(document).on('click', '.success', function (ev) {
         var buy = $(ev.target).attr("data-buy");
-        $("#toast").fadeIn(1500, function () {
-            setTimeout(function () {
-                $("#toast").fadeOut(1500);
-            }, 2000)
-        });
+        var r = new XMLHttpRequest();
+        r.open('GET', 'https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id='+buy', true);
+        r.send();
+        alert(r.status);
         window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
     });
 }
