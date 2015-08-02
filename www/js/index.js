@@ -60,7 +60,7 @@ function createXHR() {
     $(document).on('click', '.success', function (ev) {
         var buy = $(ev.target).attr("data-buy");
         var r = new XMLHttpRequest();
-        r.open('GET', 'https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id='+buy', true);
+        r.open('GET', 'https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id='+buy, true);
         r.send();
         alert(r.status);
         window.open('https://supay.sabanciuniv.edu/index.php?do=catalog/payment&lang=tr&id=' + buy);
